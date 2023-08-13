@@ -1,0 +1,57 @@
+div.menu-main {
+  display: grid;
+  grid-template-rows: 80px 10px 1fr;
+  grid-template-columns: 1fr;
+  background-color: #151718;
+}
+
+div.menu-main .logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 25px;
+}
+div.menu-main .logo div {
+  display: flex;
+  align-items: flex-end;
+}
+
+div.menu-main img {
+  width: 27px;
+}
+
+div.menu-main .logo div span {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  margin-left: 5px;
+}
+
+div.menu-main hr {
+  background-color: #323232;
+  height: 1px;
+  width: 95%;
+  border: none;
+}
+
+div.menu-main .tabs .tab {
+  padding-left: 30px;
+  margin: 25px 0;
+  display: flex;
+  color: #898989;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+div.menu-main .tabs .tab.selected {
+  color: #ffffff;
+  border-left: #fff solid 5px;
+  padding-left: 25px;
+}
+
+div.menu-main .tabs .tab span {
+  margin-left: 15px;
+}
