@@ -1,9 +1,12 @@
 import Router from "./Router";
+import GlobalProvider from "./hooks/useGlobalState";
 
 function App() {
   return (
     <>
-      <Router />
+      <GlobalProvider>
+        <Router />
+      </GlobalProvider>
     </>
   );
 }

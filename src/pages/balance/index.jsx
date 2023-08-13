@@ -4,14 +4,14 @@ import Dropdown from "./Dropdown";
 import addIcon from "../../assets/add-icon.svg";
 import saveMoneyIcon from "../../assets/save-money-icon.svg";
 import exitMoneyIcon from "../../assets/exit-money-icon.svg";
-import { v4 as uuid } from "uuid";
-import "./Balance.css";
 import { formatCurrency } from "../../utils";
+import { useGlobalState } from "../../hooks/useGlobalState";
+import "./Balance.css";
+import { format } from "date-fns";
 
 function Balance() {
   const [formState, setFormState] = useState({});
   const [filtersState, setFiltersState] = useState({});
-  const [dataState, setDataState] = useState([]);
   const [dataFilteredState, setDataFilteredState] = useState([]);
   const [optionsCategoryFilter, setOptionsCategoryFilter] = useState([{}]);
   const [display, setDisplay] = useState({
@@ -19,6 +19,9 @@ function Balance() {
     totalExit: 0,
     balance: 0,
   });
+
+  const { dataState, updateDataState, loadDataState } = useGlobalState();
+
   const options = [
     { value: "", name: "" },
     { value: 0, name: "Entrada" },
@@ -66,9 +69,15 @@ function Balance() {
     if (Object.keys(formState).length === 4) {
       const form = formState;
       form.value = form.value.replace(/[^\d]/g, "");
-      setDataState((stt) => [...stt, { ...formState, guid: uuid() }]);
+      updateDataState(form);
     }
   };
+
+  useEffect(() => {
+    if (dataState.length < 1) {
+      loadDataState();
+    }
+  }, []);
 
   useEffect(() => {
     setDataFilteredState(dataState);
@@ -186,7 +195,9 @@ function Balance() {
                   )}
                   <div>
                     <span className="title">{stt.title}</span>
-                    <span className="date">01/01/2021</span>
+                    <span className="date">
+                      {format(new Date(stt.date), "dd/MM/yyyy hh:mm")}
+                    </span>
                   </div>
                 </div>
                 <span className="type">
