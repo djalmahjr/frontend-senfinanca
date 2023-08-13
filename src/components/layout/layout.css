@@ -6,7 +6,7 @@ body {
   margin: 0;
   border: 0;
   display: grid;
-  grid-template-columns: 270px 1fr;
+  grid-template-columns: 200px 1fr;
   grid-template-rows: 1fr;
   height: 100%;
 }

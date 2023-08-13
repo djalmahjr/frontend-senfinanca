@@ -1,0 +1,128 @@
+div.balance-container {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 400px 1fr;
+}
+
+div.balance-container .insertion {
+  background-color: #fff;
+  border-left: 1.5px solid #d2d5d6;
+  border-right: 1.5px solid #f7f7f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.balance-container .insertion div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+div.balance-container .insertion button {
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  align-self: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+div.balance-container .insertion button img {
+  width: 50px;
+}
+
+div.input-field,
+div.select-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 25px 0;
+}
+
+div.input-field label,
+div.select-field label {
+  color: #3e3f5e;
+  margin-bottom: 10px;
+}
+
+div.input-field input,
+div.select-field select {
+  border: 1px solid #d2d5d6;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+div.balance-container .transaction {
+  display: grid;
+  grid-template-rows: 150px 100px 1fr;
+  grid-template-columns: 1fr;
+}
+
+div.balance-container .transaction .display {
+  background-color: #fff;
+  margin: 20px 50px;
+  border-radius: 10px;
+  border: 1px solid #d2d5d6;
+  display: flex;
+  justify-content: space-around;
+}
+
+div.balance-container .transaction .display div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.balance-container .transaction .display .amount {
+  font-size: 1.5rem;
+}
+
+div.balance-container .transaction div.filters {
+  display: flex;
+  margin: 0 30px;
+}
+div.balance-container .transaction div.filters .select-field {
+  margin-right: 10px;
+}
+
+div.balance-container .transaction div.data ul {
+  padding: 0 30px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+div.balance-container .transaction div.data img {
+  width: 27px;
+  margin-right: 15px;
+}
+
+div.balance-container .transaction div.data li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+div.balance-container .transaction div.data span {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+div.balance-container .transaction div.data .identify {
+  display: flex;
+  align-items: row;
+}
+
+div.balance-container .transaction div.data .identify div {
+  display: flex;
+  flex-direction: column;
+}
+
+div.balance-container .transaction div.data .identify .title {
+  font-size: 1.3rem;
+}
+
+div.balance-container .transaction div.data .identify .date {
+  font-size: 0.9rem;
+}
