@@ -4,21 +4,17 @@ import Dropdown from "./Dropdown";
 import addIcon from "../../assets/add-icon.svg";
 import saveMoneyIcon from "../../assets/save-money-icon.svg";
 import exitMoneyIcon from "../../assets/exit-money-icon.svg";
-import { formatCurrency } from "../../utils";
 import { useGlobalState } from "../../hooks/useGlobalState";
-import "./Balance.css";
 import { format } from "date-fns";
+import Display from "../../components/display";
+import { formatCurrency } from "../../utils";
+import "./Balance.css";
 
 function Balance() {
   const [formState, setFormState] = useState({});
   const [filtersState, setFiltersState] = useState({});
   const [dataFilteredState, setDataFilteredState] = useState([]);
   const [optionsCategoryFilter, setOptionsCategoryFilter] = useState([{}]);
-  const [display, setDisplay] = useState({
-    totalEntry: 0,
-    totalExit: 0,
-    balance: 0,
-  });
 
   const { dataState, updateDataState, loadDataState } = useGlobalState();
 
@@ -91,21 +87,6 @@ function Balance() {
       { value: "", name: "Todas" },
       ...optionsCategory,
     ]);
-
-    const totalEntry = dataState.reduce(
-      (acc, item) => (item.type == 0 ? acc + Number(item.value) : acc),
-      0
-    );
-    const totalExit = dataState.reduce(
-      (acc, item) => (item.type == 1 ? acc + Number(item.value) : acc),
-      0
-    );
-    const balance = totalEntry - totalExit;
-    setDisplay({
-      totalEntry: totalEntry,
-      totalExit: totalExit,
-      balance: balance,
-    });
   }, [dataState]);
 
   return (
@@ -149,20 +130,7 @@ function Balance() {
         </form>
       </section>
       <section className="transaction">
-        <div className="display">
-          <div className="total-entries">
-            <span className="amount">{formatCurrency(display.totalEntry)}</span>
-            <span>Total entradas</span>
-          </div>
-          <div className="total-exit">
-            <span className="amount">{formatCurrency(display.totalExit)}</span>
-            <span>Total saidas</span>
-          </div>
-          <div className="total-balance">
-            <span className="amount">{formatCurrency(display.balance)}</span>
-            <span>Saldo</span>
-          </div>
-        </div>
+        <Display />
         <div className="filters">
           <Dropdown
             nameField="type"
@@ -204,7 +172,7 @@ function Balance() {
                   {options.find((op) => op.value == stt.type).name}
                 </span>
                 <span className="category">{stt.category}</span>
-                <span className="amount">{stt.value}</span>
+                <span className="amount">{formatCurrency(stt.value)}</span>
               </li>
             ))}
           </ul>

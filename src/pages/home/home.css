@@ -1,0 +1,102 @@
+div.home .view {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* div.home .left {
+  padding: 30px 20px;
+} */
+
+div.home .left .display {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 450px;
+  padding: 30px;
+}
+
+div.home .left .display div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.home .left .display .amount {
+  font-size: 1.5rem;
+}
+
+div.home .message {
+  padding: 30px 20px;
+}
+
+div.home .message h1 {
+  font-size: 2rem;
+}
+div.home .rigth {
+  padding: 30px 20px;
+}
+
+div.home .rigth ul {
+  padding: 0 30px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+div.home .rigth img {
+  width: 27px;
+  margin-right: 15px;
+}
+
+div.home .rigth li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0;
+}
+
+div.home .rigth span {
+  margin-right: 15px;
+  font-size: 1.1rem;
+}
+div.home .rigth .identify {
+  display: flex;
+  align-items: row;
+}
+
+div.home .rigth .identify div {
+  display: flex;
+  flex-direction: column;
+}
+
+div.home .rigth .identify .title {
+  font-size: 1.3rem;
+}
+
+div.home .rigth .identify .date {
+  font-size: 0.9rem;
+}
+
+div.home .rigth .header-rigth {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+div.home .rigth .resume {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 10px;
+}
+
+div.home .rigth .header-rigth p {
+  font-size: 1.1rem;
+}
+
+div.home .rigth .header-rigth a {
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
