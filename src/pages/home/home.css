@@ -60,22 +60,21 @@ div.home .rigth span {
   margin-right: 15px;
   font-size: 1.1rem;
 }
+
+div.home .rigth .resume p.emplty {
+  font-size: 0.8rem;
+  margin: 20px 0 0 0;
+}
+
 div.home .rigth .identify {
   display: flex;
   align-items: row;
+  align-items: center;
 }
 
 div.home .rigth .identify div {
   display: flex;
   flex-direction: column;
-}
-
-div.home .rigth .identify .title {
-  font-size: 1.3rem;
-}
-
-div.home .rigth .identify .date {
-  font-size: 0.9rem;
 }
 
 div.home .rigth .header-rigth {
@@ -89,6 +88,7 @@ div.home .rigth .resume {
   background-color: #fff;
   padding: 30px 20px;
   border-radius: 10px;
+  min-width: 300px;
 }
 
 div.home .rigth .header-rigth p {

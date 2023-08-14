@@ -31,20 +31,24 @@ function Home() {
               <p>Ultimas transações</p>
               <a onClick={() => navigate("/balance")}>Ver mais</a>
             </div>
-            {dataState?.slice(0, 5).map((stt) => (
-              <li key={stt.guid}>
-                <div className="identify">
-                  {stt.type == 0 ? (
-                    <img src={saveMoneyIcon} alt="Icone Carteira" />
-                  ) : (
-                    <img src={exitMoneyIcon} alt="Icone Saida" />
-                  )}
-                  <span className="title">{stt.title}</span>
-                </div>
-                <span className="category">{stt.category}</span>
-                <span className="amount">{formatCurrency(stt.value)}</span>
-              </li>
-            ))}
+            {dataState?.length ? (
+              dataState?.slice(0, 5).map((stt) => (
+                <li key={stt.guid}>
+                  <div className="identify">
+                    {stt.type == 0 ? (
+                      <img src={saveMoneyIcon} alt="Icone Carteira" />
+                    ) : (
+                      <img src={exitMoneyIcon} alt="Icone Saida" />
+                    )}
+                    <span className="title">{stt.title}</span>
+                  </div>
+                  <span className="category">{stt.category}</span>
+                  <span className="amount">{formatCurrency(stt.value)}</span>
+                </li>
+              ))
+            ) : (
+              <p className="emplty">Sem transações</p>
+            )}
           </div>
         </section>
       </div>
