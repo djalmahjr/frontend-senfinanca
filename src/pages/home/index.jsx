@@ -31,7 +31,7 @@ function Home() {
               <p>Ultimas transações</p>
               <a onClick={() => navigate("/balance")}>Ver mais</a>
             </div>
-            {dataState.slice(0, 5).map((stt) => (
+            {dataState?.slice(0, 5).map((stt) => (
               <li key={stt.guid}>
                 <div className="identify">
                   {stt.type == 0 ? (

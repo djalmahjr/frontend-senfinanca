@@ -8,7 +8,7 @@ function GlobalProvider({ children }) {
 
   const loadDataState = () => {
     const state = localStorage.getItem("@dataState");
-    setDataState(JSON.parse(state));
+    if (state) setDataState(JSON.parse(state));
   };
 
   const updateDataState = (item) => {
